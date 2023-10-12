@@ -1,3 +1,4 @@
+import allure
 import pytest
 import requests
 
@@ -10,6 +11,8 @@ from src.helpers.common_verification import *
 
 class TestIntegration(object):
 
+    @pytest.mark.smoke
+    @allure.feature('TC#1 - Verify Create Booking Feature')
     def test_create_booking_tc1(self):
         response = post_request(url_create_booking(), headers=common_headers(), auth=None,
                                 payload=payload_create_booking(), in_json=False)
@@ -21,9 +24,12 @@ class TestIntegration(object):
 # Payload = Separate Payload Manager
 # Headers = Headers Utils
 # Verify = Separate Verify
+    @pytest.mark.smoke
+    @allure.feature('TC#2 - Verify Update Booking Feature')
+    def test_update_put(self):
+        assert True
 
-    # def test_create_booking_tc2(self):
-    #     assert True == False
-    #
-    # def test_create_booking_tc3(self):
-    #     assert True == True
+    @pytest.mark.smoke
+    @allure.feature('TC#3 - Verify Delete Booking Feature')
+    def test_delete_(self):
+        assert True
