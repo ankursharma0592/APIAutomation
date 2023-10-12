@@ -14,4 +14,4 @@ def test_post_create_token():
     assert response.status_code == 200
     print(response.text)
     print(response.json()["token"])
-    return response.json()["token"]   
+    return response.json()["token"]
